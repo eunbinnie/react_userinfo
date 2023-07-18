@@ -1,0 +1,22 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+input {
+    margin-right: 10px;
+}
+
+.modal {
+    width: 400px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
