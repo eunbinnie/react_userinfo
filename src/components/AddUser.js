@@ -4,6 +4,7 @@ import './AddUser.css';
 const AddUser = (props) => {
     const [nameError, setNameError] = useState(false);
     const [ageError, setAgeError] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const [user, setUser] = useState({
         name: '',
         age: '',
@@ -42,6 +43,10 @@ const AddUser = (props) => {
         document.querySelector('.age').value = '';
     }
 
+    function closeModal(){
+        setShowModal(true);
+    }
+
     return (
         <form className='form' onSubmit={clickEvent}>
         <input
@@ -62,8 +67,12 @@ const AddUser = (props) => {
 
         <button type='submit'>추가</button>
 
-        {nameError && <div className='modal'>이름을 입력하시오</div>}
-        {ageError && <div className='modal'>나이는 음수일 수 없삼</div>}
+        {nameError && <div className='modal'>이름을 입력하시오
+        <button className='btn' onClick={closeModal}>닫기</button>
+        </div>}
+        {ageError && <div className='modal'>나이는 음수일 수 없삼
+        <button className='btn' onClick={closeModal}>닫기</button>
+        </div>}
         </form>
     );
 };
